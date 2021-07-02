@@ -97,9 +97,9 @@
 #define REP8_80 0x8080808080808080
 
 #if defined(STPCPY)
-ENTRY(stpcpy_mte)
+ENTRY(stpcpy)
 #elif defined(STRCPY)
-ENTRY(strcpy_mte)
+ENTRY(strcpy)
 #endif
     mov     zeroones, #REP8_01
 #if defined(STRCPY)
