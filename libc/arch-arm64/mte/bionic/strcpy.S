@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The Android Open Source Project
+ * Copyright (C) 2014 The Android Open Source Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,21 +25,5 @@
  * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-
-#include <private/bionic_asm.h>
-
-#define FUNCTION_DELEGATE(name, impl) \
-ENTRY(name); \
-    b impl; \
-END(name)
-
-FUNCTION_DELEGATE(memchr, memchr_mte)
-FUNCTION_DELEGATE(stpcpy, stpcpy_mte)
-FUNCTION_DELEGATE(strchr, __strchr_aarch64_mte)
-FUNCTION_DELEGATE(strchrnul, strchrnul_mte)
-FUNCTION_DELEGATE(strcmp, strcmp_mte)
-FUNCTION_DELEGATE(strcpy, strcpy_mte)
-FUNCTION_DELEGATE(strlen, __strlen_aarch64_mte)
-FUNCTION_DELEGATE(strrchr, strrchr_mte)
-FUNCTION_DELEGATE(strncmp, strncmp_mte)
-FUNCTION_DELEGATE(strnlen, strnlen_mte)
+#define STRCPY
+#include "string_copy.S"
