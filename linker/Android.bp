@@ -396,6 +396,9 @@ cc_binary {
         },
     },
 
+    lto: {
+        never: true,
+    },
     pgo: {
         sampling: true,
     },
